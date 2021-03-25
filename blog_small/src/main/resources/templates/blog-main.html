@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Блог сайта</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--    ссылка на стили от bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<!-- header -->
+<header th:insert="blocks/header :: header"></header>
+
+
+<!-- body -->
+<div class="container mt-5">
+    <h1>Блог сайта</h1>
+<!--    циклом th:each перебираем массив постов-->
+    <div th:each="element : ${posts}" class="alert alert-info mt-2">
+        <h3 th:text="${element.title}"></h3>
+        <p th:text="${element.anons}"></p>
+        <a th:href="'/blog/' + ${element.id}" class="btn btn-primary">Детальнее</a>
+    </div>
+</div>
+
+
+
+<!-- footer -->
+<footer th:insert="blocks/footer :: footer"></footer>
+
+</body>
+</html>

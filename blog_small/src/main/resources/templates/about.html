@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Блог сайта</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--    ссылка на стили от bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+
+<!--вставим body - тело сайта-->
+<div class="container mt-5">
+    <h1 th:text="${title}"/>
+</div>
+<!--конец вставки body-->
+
+
+<!-- вставим footer -->
+<footer th:insert="blocks/footer :: footer"></footer>
+<!--конец вставки footer-->
+
+</body>
+</html>
